@@ -17,6 +17,7 @@ table, th, td {
             <br>
             <input type="number" name="contact" placeholder="Enter your contact no" />
         </div>
+        <!-- country chnges -->
         <div class="country-section">
             <label>Country</label>
             <br>
