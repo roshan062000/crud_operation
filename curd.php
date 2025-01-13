@@ -8,9 +8,9 @@ table, th, td {
 <body>
     <form action="savedata.php" method="POST">
         <div class="company-section">
-        <label>Company</label>
+        <label>Student Name</label>
         <br>
-        <input type="text" name="company" placeholder="Enter Company Name ">
+        <input type="text" name="student" placeholder="Enter Student Name ">
         </div>
         <div class="contact-section">
             <label>Contact</label>
@@ -29,13 +29,15 @@ table, th, td {
         </div>
         <div class="gender-section">
           <label>Gender</label>
-        <input type="radio" value="Male">Male
-        <input type="radio" value="Female">Female
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender"  value="Female">Female
         </div>
         <div class="favourite_subject">
           <label>Favourite Subject</label>
-          <input type="checkbox" value="Maths">Maths
-          <input type="checkbox" value="Science">Science
+          <input type="checkbox" name="subject[]" value="Maths">Maths
+          <input type="checkbox" name="subject[]" value="Science">Science
+          <input type="checkbox" name="subject[]" value="History">History
+          <input type="checkbox" name="subject[]" value="Biology">Biology
          </div>
         <br>
         <div class="button">            
