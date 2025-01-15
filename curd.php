@@ -1,3 +1,5 @@
+<?php
+include('conn.php'); ?>
 <!DOCTYPE html>
 <html>
 <style>
@@ -10,12 +12,12 @@ table, th, td {
         <div class="company-section">
         <label>Student Name</label>
         <br>
-        <input type="text" name="student" placeholder="Enter Student Name ">
+        <input type="text" name="student" placeholder="Enter Student Name " required>
         </div>
         <div class="contact-section">
             <label>Contact</label>
             <br>
-            <input type="number" name="contact" placeholder="Enter your contact no" />
+            <input type="number" name="contact" placeholder="Enter your contact no" required/>
         </div>
         <!-- country chnges -->
         <div class="country-section">
@@ -45,24 +47,41 @@ table, th, td {
         </div>
     </form>
 
-<h2>A basic HTML table</h2>
+
+  <?php
+
+  
+
+      
+           
+       
+  ?>
+
+<h2>Student data table</h2>
 
 <table style="width:100%">
+
   <tr>
-    <th>Company</th>
+    <th>Student Name</th>
     <th>Contact</th>
     <th>Country</th>
   </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
+
+<?php  
+$sql_fetchdata = "SELECT * FROM `student_details` ORDER BY `student_id` DESC";
+   $result = mysqli_query($mysqli,$sql_fetchdata);
+
+     while($rows = $result->fetch_assoc()) {
+ ?>
+<tr>
+    <td><?php  echo $rows['student_name']; ?></td>
+    <td><?php  echo $rows['student_contact']; ?></td>
+    <td><?php  echo $rows['country']; ?></td>
   </tr>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-  </tr>
+<?php } ?>
+  
+
+  
 </table>
 
 <p>To understand the example better, we have added borders to the table.</p>

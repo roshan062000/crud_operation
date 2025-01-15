@@ -18,6 +18,7 @@ $insertData = mysqli_query($mysqli,$sql);
 
 if($insertData){
     echo "Data Inserted successfully";
+    header("Location:curd.php");
 }
 
 
